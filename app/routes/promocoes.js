@@ -1,7 +1,7 @@
-module.exports = function(app){
-    app.get('/promocoes',function(req,res){
-        var connection = app.app.infra.dbConnection();
-        var ProdutosDAO = new app.app.infra.ProdutosDAO(connection);
+module.exports = function(application){
+    application.get('/promocoes',function(req,res){
+        var connection = application.app.infra.dbConnection();
+        var ProdutosDAO = new application.app.infra.ProdutosDAO(connection);
         ProdutosDAO.lista(function(erros,resultados){
             if(!erros){
                 res.render('promocoes/promocoes.ejs',{lista:resultados});
