@@ -1,9 +1,9 @@
 
-module.exports = function (application) {
-    application.get("/produtos", function (req, res,next) {
+module.exports = function (app) {
+    app.get("/produtos", function (req, res,next) {
 
-        var connection = application.app.infra.dbConnection();
-        var produtosDAO = new application.app.infra.ProdutosDAO(connection);
+        var connection = app.infra.dbConnection();
+        var produtosDAO = new app.infra.ProdutosDAO(connection);
         produtosDAO.lista(function (erros, resultados) {
             if(erros){
                 return next(erros);
@@ -25,11 +25,11 @@ module.exports = function (application) {
 
     });
 
-    application.get("/produtos/form",function(req, res) {
+    app.get("/produtos/form",function(req, res) {
         res.render('produtos/form',{erros:{},produto:{}});
     });
 
-    application.post("/produtos",function (req,res) {
+    app.post("/produtos",function (req,res) {
         var produto = req.body;
 
         //valida do dados do produto
@@ -52,8 +52,8 @@ module.exports = function (application) {
             return;
         }
 
-        var connection = application.app.infra.dbConnection();
-        var produtosDAO = new application.app.infra.ProdutosDAO(connection);
+        var connection = app.infra.dbConnection();
+        var produtosDAO = new app.infra.ProdutosDAO(connection);
 
         produtosDAO.salva(produto,function(erros,resultados){
             res.redirect('/produtos');

@@ -38,8 +38,8 @@ app.set('views','./app/views')
 
 //usa consign para carregar as rotas, modulos e db
 consign({cwd: process.cwd()+"/app"})
-    .include('app/routes')
-    .then('app/infra')
+    .include('routes')
+    .then('infra')
     .into(app);
 
 app.use(function(req,res,next){
