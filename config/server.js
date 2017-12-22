@@ -37,7 +37,7 @@ app.set('views','./app/views')
 
 
 //usa consign para carregar as rotas, modulos e db
-consign()
+consign({cwd: process.cwd()+"/app"})
     .include('app/routes')
     .then('app/infra')
     .into(app);
@@ -47,7 +47,7 @@ app.use(function(req,res,next){
 })
 
 
-/*app.use(function(error,req,res,next){
+app.use(function(error,req,res,next){
     if(process.env.NODE_ENV == 'production') {
         console.log(error);
         res.status(500).render('erros/500');
@@ -55,7 +55,7 @@ app.use(function(req,res,next){
     }
     next(error);
 
-}); */
+}); 
 
 //exporta a função do express 
 module.exports = app;
