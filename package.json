@@ -4,6 +4,7 @@
   "description": "site da casa do código ",
   "main": "index.js",
   "scripts": {
+    "start": "node app",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Willian",
@@ -17,6 +18,9 @@
     "express-validator": "^4.3.0",
     "mysql": "^2.15.0",
     "socket.io": "^2.0.4"
+  },
+  "engines":{
+    "node": "4.1.1"
   },
   "devDependencies": {
     "database-cleaner": "^1.2.0",
