@@ -47,7 +47,7 @@ app.use(function(req,res,next){
 })
 
 
-app.use(function(error,req,res,next){
+/*app.use(function(error,req,res,next){
     if(process.env.NODE_ENV == 'production') {
         console.log(error);
         res.status(500).render('erros/500');
@@ -55,7 +55,7 @@ app.use(function(error,req,res,next){
     }
     next(error);
 
-});
+}); */
 
 //exporta a função do express 
 module.exports = app;
