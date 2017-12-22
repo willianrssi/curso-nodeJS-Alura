@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+    <html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cadastro de promoção casa do código</title>
+    </head>
+
+    <body>
+        <form action="/promocoes" method="post">
+            <select name="livro[id]">
+                <%for(var i=0;i<lista.length;i++){%>
+                    <option value="<%=lista[i].id%>"><%=lista[i].titulo%></option>
+                <%}%>
+            </select>
+            <input type="text" name="mensagem">
+            <input type="submit" value="Cadastrar promoção"/>
+        </form>
+    </body>
+
+
+    </html>

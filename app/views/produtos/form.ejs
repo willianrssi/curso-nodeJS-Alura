@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cadastro de Produto</title>
+</head>
+<body>
+    <% if(erros){ %>
+        <ul>
+            <% for(var i =0;i<erros.length; i++){%>
+                <li><%= erros[i].param%> - <%= erros[i].msg%></li>
+            <%}%>
+
+        </ul>
+
+    
+    <%}%>
+    <div>
+
+    </div>
+    
+    <form action="/produtos" method="post">
+        <div>
+            <label for="titulo">Título</label>
+            <input type="text" id="titulo" name="titulo" placeholder="Informe o titulo do Livro" value="<%=produto.titulo%>"/>
+          
+        </div>
+        <div>
+            <label for="preco">Preço</label>
+            <input type="text" id="preco" name="preco" placeholder="120.05" value="<%=produto.preco%>"/>
+        </div>
+        <div>
+            <label for="descricao">Descrição</label>
+            <textarea cols="20" rows="10" id="descricao" name="descricao" placeholder="Fale sobre o livro"><%=produto.descricao%></textarea>
+        </div>
+
+        <input type="submit" value="Gravar"/>
+    </form>
+</body>
+</html>
