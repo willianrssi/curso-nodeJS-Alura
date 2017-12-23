@@ -24,9 +24,10 @@ function createDBConnection() {
 
     if (process.env.NODE_ENV == 'production') {
         var host_mysql = process.env.OPENSHIFT_MYSQL_DB_HOST;
+        var database_port     = process.env.OPENSHIFT_MONGODB_DB_PORT;
 
         return mysql.createConnection({
-            host: "localhost",
+            host: host_mysql+":"+database_port,
             user: "userAI4",
             password: 'r7IMR86EwjNtjMeN',
             database: 'casadocodigo_nodejs'

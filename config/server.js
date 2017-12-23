@@ -42,7 +42,7 @@ consign()
     .then('app/infra')
     .into(app);
 
-app.use(function(req,rest){
+app.use(function(req,res){
     res.status(404).render('erros/404');
 })
 
