@@ -42,17 +42,16 @@ consign()
     .then('app/infra')
     .into(app);
 
-app.use(function(req,res,next){
+app.use(function(req,rest){
     res.status(404).render('erros/404');
 })
 
 
-app.use(function(error,req,res,next){
+app.use(function(error,req,res){
     if(process.env.NODE_ENV == 'production') {
         res.status(500).render('erros/500');
         return;
     }
-    next(error);
 
 });
 
