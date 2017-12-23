@@ -5,12 +5,11 @@ var io = require('socket.io').listen(http);
 
 app.set('io',io);
 
-var porta = process.env.PORT || 3000;
+var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
+ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
 
-http.listen(porta, function(){
-    console.log("Servidor Rodando");
-});
-
+http.listen(port, ip);
+console.log('Server running on http://%s:%s', ip, port);
 
 
 

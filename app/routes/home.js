@@ -1,8 +1,8 @@
 module.exports = function (app) {
     app.get('/', function (req, res) {
 
-        var connection = app.infra.dbConnection();
-        var produtosDAO = new app.infra.ProdutosDAO(connection);
+        var connection = app.app.infra.dbConnection();
+        var produtosDAO = new app.app.infra.ProdutosDAO(connection);
         produtosDAO.lista(function (erros, resultados) {
             if (erros) {
                 return next(erros);

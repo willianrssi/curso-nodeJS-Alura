@@ -23,10 +23,10 @@ function createDBConnection() {
 
     if (process.env.NODE_ENV == 'production') {
         return mysql.createConnection({
-            host: "us-cdbr-iron-east-05.cleardb.net",
-            user: "b97a3fe9331a62",
-            password: 'c34820bd',
-            database: 'heroku_8345c5c7c53e424'
+            host: "mysql://mysql:3306/",
+            user: "userAI4",
+            password: 'r7IMR86EwjNtjMeN',
+            database: 'casadocodigo_nodejs'
         });
     }
 
