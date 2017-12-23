@@ -26,7 +26,7 @@ function createDBConnection() {
         var host_mysql = process.env.OPENSHIFT_MYSQL_DB_HOST;
 
         return mysql.createConnection({
-            host: host_mysql,
+            host: "localhost",
             user: "userAI4",
             password: 'r7IMR86EwjNtjMeN',
             database: 'casadocodigo_nodejs'
